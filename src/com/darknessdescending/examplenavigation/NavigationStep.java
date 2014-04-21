@@ -4,16 +4,19 @@ import java.util.*;
 
 public class NavigationStep
 {
-	NavigationStep ParentStep;
-	Object objectStep;	
+	private NavigationStep ParentStep;
+	private Object mStep;
+	private int mType;	
 	
-	public NavigationStep(Object step) {
-		objectStep = step;
+	public NavigationStep() {
+		
 	}
 	
-	public Object getStep() { return objectStep; }
 	public NavigationStep getParentStep() { return ParentStep; }
+	public Object getStep() { return mStep; }
+	public int getType() { return mType; }
 	
-	public void setStep(Object step) { objectStep = step; }
 	public void setParentStep(NavigationStep parent) { ParentStep = parent; }
+	public void setStep(Object step) { mStep = step; }
+	public void setType(int type) { mType = type; }
 }
