@@ -35,11 +35,19 @@ public class MainActivity extends Activity
 		StepObject = "Step1-0";
 		tNavigationStep.setStep(StepObject);
 		tNavigationStep.setParentStep(mNavigationStep);
-		mNavigationManager.addStep(mNavigationStep);
+		mNavigationManager.addStep(tNavigationStep);
+		
+		tNavigationStep = new NavigationStep();
+		StepObject = "Step1-1";
+		tNavigationStep.setStep(StepObject);
+		tNavigationStep.setParentStep(mNavigationStep);
+		mNavigationManager.addStep(tNavigationStep);
 		
 		mNavigationManager.Initialize();
 		truefalse = mNavigationManager.NavigateForward();
 		Log.i(TAG, "mNavigationManager.NavigateForward() = " + String.valueOf(truefalse));
+		truefalse = mNavigationManager.NavigateRight();
+		Log.i(TAG, "mNavigationManager.NavigateRight() = " + String.valueOf(truefalse));
 		
 		//TextViewOutput = "temp";
 		TextViewOutput = (String) mNavigationManager.getStep().getStep();
