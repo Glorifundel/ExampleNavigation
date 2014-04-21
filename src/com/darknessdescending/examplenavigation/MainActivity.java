@@ -65,6 +65,12 @@ public class MainActivity extends Activity
 
             @Override
             public boolean onSingleTapConfirmed(MotionEvent event) {
+            	boolean temp = false;
+            	temp = mNavigationManager.NavigateForward();
+    			Log.d(TAG,"SingleTap, NavigateForward(): " + temp);
+    			TextViewOutput = (String) mNavigationManager.getStep().getStep();
+            	mTextView.setText(TextViewOutput);
+        		mTextView.invalidate();
             	return true;
             }
 
@@ -93,11 +99,7 @@ public class MainActivity extends Activity
             			//DownFling
             			temp = mNavigationManager.NavigateBack();
             			Log.d(TAG,"DownFling, NavigateBack(): " + temp);
-            		} else {
-            			
-            			temp = mNavigationManager.NavigateForward();
-            			Log.d(TAG,"upFling, NavigateForward(): " + temp);
-            		}
+            		} 
             	}
             	TextViewOutput = (String) mNavigationManager.getStep().getStep();
             	mTextView.setText(TextViewOutput);

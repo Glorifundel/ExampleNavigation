@@ -50,6 +50,12 @@ public class NavigationManager
 			mapOfSteps.put(parent, listOfSteps);
 		}
 		listOfSteps.add(step);
+		if(step.getParentStep() == mNavigationStep.getParentStep()) {
+			mListIterator = listOfSteps.listIterator(listOfSteps.indexOf(mNavigationStep));
+			ListIteratorDirection = LAST_ITERATION_NEXT;
+            NavigateRight();
+		}
+		
 	}
 	
 	public NavigationStep getStep() {
