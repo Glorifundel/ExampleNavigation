@@ -12,6 +12,26 @@ public class NavigationStep
 		
 	}
 	
+	public NavigationStep(Object step) {
+		setStep(step);
+	}
+	
+	public NavigationStep(Object step, NavigationStep parent) {
+		setStep(step);
+		setParentStep(parent);
+	}
+	
+	public NavigationStep(Object step, int type) {
+		setStep(step);
+		setType(type);
+	}
+	
+	public NavigationStep(Object step, NavigationStep parent, int type) {
+		setStep(step);
+		setParentStep(parent);
+		setType(type);
+	}
+	
 	public NavigationStep getParentStep() { return ParentStep; }
 	public Object getStep() { return mStep; }
 	public int getType() { return mType; }
