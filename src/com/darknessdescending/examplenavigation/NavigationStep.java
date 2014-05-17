@@ -6,7 +6,7 @@ public class NavigationStep
 {
 	private NavigationStep ParentStep;
 	private Object mStep;
-	private int mType;	
+	private int mType = -1;	
 	
 	public NavigationStep() {
 		
